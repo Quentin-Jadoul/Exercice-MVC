@@ -11,5 +11,5 @@ exports.formationList = function(req,res){
 }
 
 exports.login = function(req,res){
-    res.render('login.ejs');
+    res.render('login.ejs',{source: 'catalog'});
 }
