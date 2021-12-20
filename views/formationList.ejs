@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>IT Academy</title>
+        <link href="css/stylesheet.css" rel="stylesheet">
+    </head>
+    <h1>IT Academy</h1>
+    <h2>Formations disponibles</h2>
+    <div>
+        <form>
+            <input type="submit" value="Voir le panier" formaction="/showCart"/>
+            <input type="submit" value="Se connecter" formaction="/login"/>
+        </form>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Nom</th>
+                    <th>Prix</th>
+                    <th>Date début</th>
+                    <th>Date fin</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i = 0 ; i < formations.length ; i++) { %>
+                    <tr>
+                        <td><%= i +1 %></td>
+                        <td><%= formations[i].name %></td>
+                        <td><%= formations[i].price %></td>
+                        <td><%= formations[i].beginDate %></td>
+                        <td><%= formations[i].endDate %></td>
+                        <td><form action = "/addToCart/<%=formations[i].idformation %>" method="GET"><button id="subscription" type="submit">S'inscrire</button></form></td>
+                    </tr>
+                <% } %> 
+            </tbody>
+        </table>
+    </div>
+</html>

@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>IT Academy</title>
+        <link href="../style/stylesheet.css" rel="stylesheet">
+    </head>
+    <h1>IT Academy</h1>
+    <h2>Panier</h2>
+    <div>
+        <form>
+            <input type="submit" value="Retourner au catalogue de formations" formaction="/formation"/>
+            <input type="submit" value="Finaliser l'inscription" formaction="/login"/>
+        </form>
+    </div>
+    <% if (cart.length == 0){%>
+        <h3>Panier vide</h3>
+    <%}
+    else{%>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nom</th>
+                        <th>Prix</th>
+                        <th>Date début</th>
+                        <th>Date fin</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let i = 0 ; i < cart.length ; i++) { %>
+                        <tr>
+                            <td><%= i +1 %></td>
+                            <td><%= cart[i].name %></td>
+                            <td><%= cart[i].price %></td>
+                            <td><%= cart[i].beginDate %></td>
+                            <td><%= cart[i].endDate %></td>
+                            <td><form action = "/delete" method="GET"><button id="delete" type="submit">Supprimer</button></form></td>
+                        </tr>
+                    <% } %> 
+                </tbody>
+            </table>
+        </div>
+    <%} %> 
+
+</html>
