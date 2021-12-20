@@ -1,4 +1,5 @@
 let User = require('../models/userModel');
+let Cart = require('../models/cartModel');
 
 if (typeof usersId == "undefined") {
     var usersId = [];
@@ -12,6 +13,12 @@ exports.checkSession = function(req,res){
         user = new User(req.session.id);
         usersList.push(user);
     }
+    user = getUser(req.session.id);
+    //si le cart n'existe pas
+    if (typeof user.cart == "undefined"){
+        cart = new Cart();
+        user.addCart(cart.list);
+    }
     res.redirect('/catalog');
 }
 
@@ -21,6 +28,11 @@ exports.addName = function(req,res){
     user.addName(req.body.name);
     req.session.name = user.name;
     res.redirect('/')
+}
+
+exports.addCart = function(req,res){
+    user = getUser(req.session.id);
+    user.addCart()
 }
 
 getUser = function(id){
