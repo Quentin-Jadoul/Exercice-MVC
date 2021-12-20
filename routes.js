@@ -6,9 +6,7 @@ let userController = require('./controllers/userController');
 let cartController = require('./controllers/cartController');
 
 //Liste des routes vers les controleurs
-router.get('/', (req,res) => res.redirect('/formation'));
-
-router.get('/formation', userController.checkSession);
+router.get('/', userController.checkSession);
 
 router.get('/catalog', catalogController.formationList);
 router.get('/login', catalogController.login);
