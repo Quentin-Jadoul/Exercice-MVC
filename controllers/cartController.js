@@ -1,8 +1,13 @@
 let Cart = require('../models/cartModel');
-let User = require('../models/userModel');
+
+let connection = require('../db.js');
 
 exports.showCart = function(req,res){
-    res.render('showCart.ejs', {cart: cart.list});
+    connection.query(`select * from formation WHERE idformation IN (${req.session.user.cart});`, function(error,result) {
+        if (error) console.log(error);
+        console.log(result);
+        res.render('showCart.ejs', {cart: result});
+    });
 }
 
 exports.addToCart = function(req,res){
