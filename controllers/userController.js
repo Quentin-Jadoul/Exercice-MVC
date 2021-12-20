@@ -18,6 +18,12 @@ exports.login = function(req,res){
     res.redirect('/catalog');
 }
 
+exports.login2 = function(req,res){
+    req.session.user.name = req.body.name;
+    console.log(req.session.user.name);
+    res.redirect('/subscribe');
+}
+
 exports.subscribe = function(req,res){
     if (req.session.user.name != ''){
         for (i = 0; i < req.session.user.cart.length; i ++){

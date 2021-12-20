@@ -8,6 +8,7 @@ let cartController = require('./controllers/cartController');
 //Liste des routes vers les controleurs
 router.get('/', userController.checkSession);
 router.post('/connection', userController.login);
+router.post('/connection2', userController.login2);
 router.get('/subscribe', userController.subscribe);
 
 router.get('/catalog', catalogController.formationList);
