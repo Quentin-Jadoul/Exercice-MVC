@@ -35,7 +35,7 @@
                             <td><%= cart[i].price %></td>
                             <td><%= cart[i].beginDate %></td>
                             <td><%= cart[i].endDate %></td>
-                            <td><form action = "/delete" method="GET"><button id="delete" type="submit">Supprimer</button></form></td>
+                            <td><form action = "/delete/<%=cart[i].idformation %>" method="GET"><button id="delete" type="submit">Supprimer</button></form></td>
                         </tr>
                     <% } %> 
                 </tbody>

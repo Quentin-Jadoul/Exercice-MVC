@@ -27,3 +27,9 @@ exports.newCart = function(req,res){
     cart = new Cart();
     return cart;
 }
+
+exports.deleteItem = function(req,res){
+    index = req.session.user.cart.indexOf(req.params.id);
+    req.session.user.cart.splice(index, 1);
+    res.redirect('/showCart')
+}

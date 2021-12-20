@@ -14,5 +14,6 @@ router.get('/login', catalogController.login);
 
 router.get('/addToCart/:id', cartController.addToCart);
 router.get('/showCart', cartController.showCart);
+router.get('/delete/:id', cartController.deleteItem);
 
 module.exports = router;
