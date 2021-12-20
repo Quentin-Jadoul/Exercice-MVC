@@ -2,17 +2,15 @@ let Cart = require('../models/cartModel');
 let User = require('../models/userModel');
 
 exports.showCart = function(req,res){
-    if (typeof cart == "undefined") {
-        cart = new Cart();
-    }
     res.render('showCart.ejs', {cart: cart.list});
 }
 
 exports.addToCart = function(req,res){
-    if (typeof cart == "undefined") {
-        cart = new Cart();
+    if (!req.session.user.cart.includes(req.params.id)){
+        req.session.user.cart.push(req.params.id);
     }
-    cart.push()
+    console.log(req.session.user.cart);
+    res.redirect('/catalog');
 }
 
 exports.newCart = function(req,res){

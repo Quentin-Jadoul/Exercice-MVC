@@ -5,7 +5,7 @@ exports.checkSession = function(req,res){
     //si l'utilisateur n'existe pas
     if (!req.session.user){
         cart = cartController.newCart()
-        req.session.user = new User(req.session.id,cart)
+        req.session.user = new User(req.session.id,cart.formationsId)
     }
     res.redirect('/catalog')
 }

@@ -1,6 +1,6 @@
 class Cart {
     constructor(){
-        this.list=[];
+        this.formationsId=[];
     }
     //methodes
     add(formation){
