@@ -14,7 +14,7 @@ router.get('/login', catalogController.login);
 router.get('/addToCart/:id', cartController.addToCart);
 router.get('/showCart', cartController.showCart);
 
-router.post('/connection', userController.addName);
+router.post('/connection', userController.login);
 //router.get('/createUser', userController.createUser);
 
 

@@ -6,7 +6,7 @@ exports.formationList = function(req,res){
     connection.query("select * from formation;", function(error,result) {
         if (error) console.log(error);
         catalog = new Catalog(result);
-        res.render('formationList.ejs', {formations: catalog.formationsList});
+        res.render('formationList.ejs', {formations: catalog.formationsList, user: req.session.user});
     });
 }
 

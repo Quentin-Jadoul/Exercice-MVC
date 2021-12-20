@@ -1,15 +1,12 @@
-const Cart = require("./cartModel");
-
 class User{
-    constructor(id){
+    constructor(id,cart){
         this.id = id;
+        this.cart = cart;
+        this.name = '';
     }
     //methodes
     addName(name){
         this.name = name;
-    }
-    addCart(cart){
-        this.cart = cart;
     }
     getId(){
         return this.id;

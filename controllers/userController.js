@@ -5,12 +5,13 @@ exports.checkSession = function(req,res){
     //si l'utilisateur n'existe pas
     if (!req.session.user){
         cart = cartController.newCart()
-        req.session.user = new User(req.session.id)
+        req.session.user = new User(req.session.id,cart)
     }
     res.redirect('/catalog')
 }
 
-exports.addName = function(req,res){
-    req.session.user.addName(req.body.name)
-    res.redirect('/catalog')
+exports.login = function(req,res){
+    req.session.user.name = req.body.name;
+    console.log(req.session.user.name);
+    res.redirect('/catalog');
 }
