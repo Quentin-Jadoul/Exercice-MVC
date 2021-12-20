@@ -7,8 +7,8 @@
     <h2>Formations disponibles</h2>
     <div>
         <form>
-            <input type="submit" value="Voir le panier" formaction="/showCart"/>
-            <input type="submit" value="Se connecter" formaction="/login"/>
+            <input type="submit" id="formButton" value="Voir le panier" formaction="/showCart"/>
+            <input type="submit" id="formButton" value="Se connecter" formaction="/login"/>
         </form>
     </div>
     <div>
@@ -18,8 +18,8 @@
                     <th>id</th>
                     <th>Nom</th>
                     <th>Prix</th>
-                    <th>Date début</th>
-                    <th>Date fin</th>
+                    <th>Début</th>
+                    <th>Fin</th>
                     <th></th>
                 </tr>
             </thead>
@@ -31,7 +31,7 @@
                         <td><%= formations[i].price %></td>
                         <td><%= formations[i].beginDate %></td>
                         <td><%= formations[i].endDate %></td>
-                        <td><form action = "/addToCart/<%=formations[i].idformation %>" method="GET"><button id="subscription" type="submit">S'inscrire</button></form></td>
+                        <td><form action = "/addToCart/<%=formations[i].idformation %>" method="GET"><button id="formButton" type="submit">S'inscrire</button></form></td>
                     </tr>
                 <% } %> 
             </tbody>

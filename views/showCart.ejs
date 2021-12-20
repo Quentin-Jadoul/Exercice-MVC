@@ -1,14 +1,14 @@
 <html>
     <head>
         <title>IT Academy</title>
-        <link href="../style/stylesheet.css" rel="stylesheet">
+        <link href="css/stylesheet.css" rel="stylesheet">
     </head>
     <h1>IT Academy</h1>
     <h2>Panier</h2>
     <div>
         <form>
-            <input type="submit" value="Finaliser l'inscription" formaction="/subscribe"/>
-            <input type="submit" value="Retourner au catalogue de formations" formaction="/catalog"/>
+            <input type="submit" id="formButton" value="Finaliser l'inscription" formaction="/subscribe"/>
+            <input type="submit" id="formButton" value="Retourner au catalogue de formations" formaction="/catalog"/>
         </form>
     </div>
     <% if (cart.length == 0){%>
@@ -35,7 +35,7 @@
                             <td><%= cart[i].price %></td>
                             <td><%= cart[i].beginDate %></td>
                             <td><%= cart[i].endDate %></td>
-                            <td><form action = "/delete/<%=cart[i].idformation %>" method="GET"><button id="delete" type="submit">Supprimer</button></form></td>
+                            <td><form action = "/delete/<%=cart[i].idformation %>" method="GET"><button id="formButton" type="submit">Supprimer</button></form></td>
                         </tr>
                     <% } %> 
                 </tbody>

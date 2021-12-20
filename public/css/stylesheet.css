@@ -1,10 +1,23 @@
-table,
-td {
-    border: 1px solid #333;
+th,td{
+    border: 1px solid rgb(170, 162, 162);
+    text-align: left;
 }
 
-thead,
-tfoot {
-    background-color: #333;
-    color: #fff;
+
+#formButton {
+    color: rgb(14, 129, 14);
+    background-color: rgb(187, 187, 187);
+    border: rgb(187, 187, 187);
+    border-radius: 5px;
+    font-size:medium;
+    height: 30px;
+}
+
+h1{
+    text-align: center;
+    color: #2f3fa8;
+}
+
+h2,h3{
+    color: #2f3fa8;
 }

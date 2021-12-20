@@ -1,9 +1,10 @@
 <h1>IT Academy</h1>
+<link href="css/stylesheet.css" rel="stylesheet">
 <%if (source == 'catalog'){%>
     <h2>Entrer votre pseudo</h2>
     <form action="/connection" method="POST">
         <input type="text" name="name" value="" />
-        <button type="submit" id="connection">Enregistrer</button>
+        <button type="submit" id="formButton">Enregistrer</button>
     </form>
 <%}
 else if (source == 'subscribe'){%>
@@ -11,6 +12,6 @@ else if (source == 'subscribe'){%>
     <h2>Commencez par vous connecter</h2>
     <form action="/connection2" method="POST">
     <input type="text" name="name" value="" />
-    <button type="submit" id="connection">Enregistrer</button>
+    <button type="submit" id="formButton">Enregistrer</button>
     </form>
 <%}%>
