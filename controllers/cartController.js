@@ -17,5 +17,4 @@ exports.addToCart = function(req,res){
 
 exports.newCart = function(req,res){
     cart = new Cart();
-    
 }
