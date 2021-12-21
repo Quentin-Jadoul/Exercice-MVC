@@ -17,6 +17,6 @@ app.use(session({
 app.use('/', router)/
 
 //Lauch app to listen to specified port 
-app.listen(9000, function () {
-    console.log('Running on port 9000');
+app.listen(80, function () {
+    console.log('Running on port 80');
 })
